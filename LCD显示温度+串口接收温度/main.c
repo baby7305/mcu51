@@ -9,7 +9,7 @@
 #include"lcd.h"
 #include"temp.h"
 
-uchar CNCHAR[6] = "摄氏度";
+uchar CNCHAR[6] = "Celsiu";
 void LcdDisplay(int);
 void UsartConfiguration();
 
