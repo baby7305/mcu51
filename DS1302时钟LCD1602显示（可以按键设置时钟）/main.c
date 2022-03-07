@@ -32,6 +32,7 @@ void Timer0Init();
 void main()
 {
 	unsigned char i;
+	Timer0Init();  //定时器0初始化
 	Int0Configuration();
 	LcdInit();
 	Ds1302Init();
