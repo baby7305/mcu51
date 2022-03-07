@@ -21,6 +21,7 @@ void Int0Configuration();
 void LcdDisplay();
 unsigned char SetState,SetPlace;
 void Delay10ms(void);   //误差 0us
+void Timer0Init();
 /*******************************************************************************
 * 函数名         : main
 * 函数功能		   : 主函数
