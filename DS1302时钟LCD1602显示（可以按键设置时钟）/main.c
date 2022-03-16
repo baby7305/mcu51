@@ -15,7 +15,7 @@ sbit K2=P3^0;
 sbit K3=P3^2;
 sbit K4=P3^3;
 
-unsigned char ssec,sec,min;
+unsigned int ssec,sec,min;
 
 void Int0Configuration();
 void LcdDisplay();
@@ -128,6 +128,16 @@ void LcdDisplay()
 	LcdWriteData('-');
 	LcdWriteData('0'+TIME[0]/16);				//秒
 	LcdWriteData('0'+(TIME[0]&0x0f));
+
+	LcdWriteCom(0x80+0X48);
+	LcdWriteData('0'+min/10);
+	LcdWriteData('0'+min%10);
+	LcdWriteData('-');
+	LcdWriteData('0'+sec/10);
+	LcdWriteData('0'+sec%10);
+	LcdWriteData('-');
+	LcdWriteData('0'+ssec/10);
+	LcdWriteData('0'+ssec%10);
 
 	LcdWriteCom(0x80);
 	LcdWriteData('2');
