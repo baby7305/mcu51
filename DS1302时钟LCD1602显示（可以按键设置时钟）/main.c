@@ -15,6 +15,9 @@ sbit K2=P3^0;
 sbit K3=P3^2;
 sbit K4=P3^3;
 
+sbit P20=P2^0;
+
+
 unsigned int ssec,sec,min;
 
 void Int0Configuration();
@@ -32,12 +35,15 @@ void Timer0Init();
 void main()
 {
 	unsigned char i;
+	P20 = 1;
 	Timer0Init();  //定时器0初始化
 	Int0Configuration();
 	LcdInit();
 	Ds1302Init();
+	P20 = 0;
 	while(1)
 	{	
+		P20 = SetPlace;
 		if(SetState==0)
 		{
 			Ds1302ReadTime();
